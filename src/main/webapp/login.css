@@ -1,0 +1,331 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #1d2b3a !important;
+}
+
+
+
+header
+{
+	position: fixed;
+	top: 0;
+	right: 0;
+	display: flex;
+    background: #c43b68;
+    color: #223243;
+	justify-content: space-around;
+	align-items: center;
+    margin-right: 50px;
+	padding: 8px 50px;
+    border-radius: 20px;
+	z-index: 1000;
+	transition: 0.6s;
+    margin-top: 10px;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0,0.35),
+    inset -5px -5px 15px rgba(255,255,255,0.1),
+    inset 5px 5px 15px rgba(0,0,0,0.35);
+}
+
+header.sticky
+{
+	padding: 10px 25px;
+    color: #c43b68;
+    background-color: #c43b68;
+    border-radius: 650px;
+    margin-right: 50px;
+}
+
+
+header ul
+{
+	position: relative;
+	display: flex;
+    float: right;
+	justify-content: center;
+	align-items: center;
+}
+
+header ul li
+{
+	position: relative;
+	list-style: none;
+}
+
+header ul li a
+{
+	position: relative;
+    font-weight: 400;
+	margin: 0 15px;
+	text-decoration: none;
+	color: #223243;
+    font-size: 20px;
+	letter-spacing: 2px;
+	transition: 00.6s;
+}
+header ul li:hover a{
+    letter-spacing: 3px;
+}
+header.sticky .logo,
+header.sticky ul li a
+{
+	color: white;
+} 
+
+
+
+
+
+.container{
+    padding: 40px;
+    border-radius: 20px;
+    border: 8px solid #223243;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0,0.35),
+    inset -5px -5px 15px rgba(255,255,255,0.1),
+    inset 5px 5px 15px rgba(0,0,0,0.35);
+}
+.container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+.container form h2{
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.container form .inputBox{
+    position: relative;
+    width: 300px;
+}
+
+.container form .inputBox input{
+    padding: 12px 10px 12px 48px;
+    border: none;
+    width: 100%;
+    background-color: #223243;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    color: #fff;
+    font-weight: 300;
+    border-radius: 25px;
+    font-size: 1em;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.35);
+    transition: 0.5s;
+    outline: none;
+}
+.container form .inputBox i{
+    position: absolute;
+    top: 15px;
+    left: 16px;
+    width: 25px;
+    padding: 2px 0;
+    padding-right: 8px;
+    color: #c43b68;
+    border-right: 1px solid #c43b68;
+} 
+.container form .inputBox span{
+    position: absolute ;
+    left: 0 ;
+    padding: 12px 10px 12px 48px ;
+    pointer-events: none;
+    font-size: 1em;
+    font-weight: 300;
+    transition: 0.5s;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+.container form .inputBox input:valid ~ span,
+.container form .inputBox input:focus ~ span
+{
+    color: #c43b68;
+    border: 1px solid #c43b68;
+    background: #223243;
+    transform: translateX(25px) translateY(-7px);
+    font-size: 0.6em;
+    padding: 0 8px;
+    border-radius: 10px;
+    letter-spacing: 0.1em;
+}
+.container form .inputBox input:valid,
+.container form .inputBox input:focus
+{
+    border: 1px solid #c43b68;
+}
+.container form .inputBox input[type="submit"]{
+    background: #c43b68;
+    color: #223243;
+    padding: 10px 0;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0,0.35),
+    inset -5px -5px 15px rgba(255,255,255,0.1),
+    inset 5px 5px 15px rgba(0,0,0,0.35);
+}
+.container form p{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1em;
+    font-weight: 300;
+}
+.container form p a{
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+} 
+#toggle,#toggle1,#toggle2{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 4px;
+    background: url("./svg_icon/eye-solid.svg");
+    width: 40px;
+    height: 35px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25px;
+    cursor: pointer;
+}
+#toggle.hide,#toggle1.hide,#toggle2.hide{
+    background: url("./svg_icon/eye-slash-solid.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 28px;
+}
+
+
+@media (max-width: 400px) {
+    .container form .inputBox{
+        width: auto;
+    }
+    .container form .inputBox input[type="submit"]{
+        padding: 10px 20px;
+    }
+
+    .container form p{
+        font-size: .8em;
+    }
+    .container{
+        margin: 0 10px;
+    }
+}
+
+
+@media screen and (max-width:900px) {
+    header
+    {
+        background: #c43b68;
+        color: #223243;
+    }
+    
+    header.sticky
+    {
+        background: #c43b68;
+        color: #c43b68;
+    }
+    .toggle
+	{
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		cursor: pointer;
+	}
+	.toggle:before
+	{
+		content: '';
+		position: absolute;
+		top: 4px;
+		width: 100%;
+		height: 2px;
+		background: #fff;
+		z-index: 1;
+		box-shadow: 0 10px 0 #fff;
+		transition: 0.5s;
+	}
+	.toggle:after
+	{
+		content: '';
+		position: absolute;
+		bottom: 4px;
+		width: 100%;
+		height: 2px;
+		background: #fff;
+		z-index: 1;
+		transition: 0.5s;
+	}
+
+
+	header,
+	header.sticky
+	{
+		padding: 8px 50px;
+	}
+
+	header ul
+	{
+		position: absolute;
+		top: 59px;
+		left: 0;
+		width: 100%;
+		text-align: center;
+        border-radius: 20px;
+        padding: 0 20px;
+		overflow: auto;
+		visibility: hidden;
+		opacity: 0;
+        background: #c43b68;
+        box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+        5px 5px 15px rgba(0, 0, 0,0.35),
+        inset -5px -5px 15px rgba(255,255,255,0.1),
+        inset 5px 5px 15px rgba(0,0,0,0.35);
+
+	}
+
+	header.active ul
+	{
+		visibility: visible;
+		opacity: 1;
+		display: block;
+		padding-top: 20px;
+	}
+    header.active ul li{
+        border-bottom: 1px solid #223243;
+    }
+    header.active ul li:last-child{
+        border: none;
+    }
+	header.active ul li a
+	{
+		display: inline-block;
+		margin: 10px 0;
+		font-size: 25px;
+	}
+	header .logo,
+	header ul li a
+	{
+		color: #fff;
+	}
+}
+
+
+
+
+
